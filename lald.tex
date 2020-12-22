@@ -1,0 +1,242 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathdots}
+\usepackage[pdftex]{graphicx}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{multicol}
+\usepackage{bm}
+\usepackage{listings}
+\PassOptionsToPackage{usenames,dvipsnames}{color}  %% Allow color names
+\usepackage{pdfpages}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\usepackage{framed}
+\usepackage{wasysym}
+\usepackage[thinlines]{easytable}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\absfit}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\eval}[3]{\left[#1\right]_{#2}^{#3}}
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\pd}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\inner}[1]{\langle#1\rangle}
+\newcommand{\cond}{\bigg|}
+\newcommand{\rank}[1]{\mathbf{rank}(#1)}
+\newcommand{\range}[1]{\mathbf{range}(#1)}
+\newcommand{\nullsp}[1]{\mathbf{null}(#1)}
+\newcommand{\repr}[1]{\left\langle#1\right\rangle}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Tr}{\mathbf{Tr}}
+\DeclareMathOperator{\diag}{\mathbf{diag}}
+\DeclareMathOperator{\dist}{\mathbf{dist}}
+\DeclareMathOperator{\prob}{\mathbf{prob}}
+\DeclareMathOperator{\dom}{\mathbf{dom}}
+\DeclareMathOperator{\E}{\mathbf{E}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\var}{\mathbf{var}}
+\DeclareMathOperator{\quartile}{\mathbf{quartile}}
+\DeclareMathOperator{\conv}{\mathbf{conv}}
+\DeclareMathOperator{\VC}{VC}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\Ber}{Bernoulli}
+\DeclareMathOperator{\NP}{\mathbf{NP}}
+\DeclareMathOperator{\coNP}{\mathbf{coNP}}
+\DeclareMathOperator{\TIME}{\mathsf{TIME}}
+\DeclareMathOperator{\polytime}{\mathbf{P}}
+\DeclareMathOperator{\PH}{\mathbf{PH}}
+\DeclareMathOperator{\SIZE}{\mathbf{SIZE}}
+\DeclareMathOperator{\ATIME}{\mathbf{ATIME}}
+\DeclareMathOperator{\SPACE}{\mathbf{SPACE}}
+\DeclareMathOperator{\ASPACE}{\mathbf{ASPACE}}
+\DeclareMathOperator{\NSPACE}{\mathbf{NSPACE}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\EXP}{\mathbf{EXP}}
+\DeclareMathOperator{\NEXP}{\mathbf{NEXP}}
+\DeclareMathOperator{\NTIME}{\mathbf{NTIME}}
+\DeclareMathOperator{\DTIME}{\mathbf{DTIME}}
+\DeclareMathOperator{\poly}{poly}
+\DeclareMathOperator{\BPP}{\mathbf{BPP}}
+\DeclareMathOperator{\ZPP}{\mathbf{ZPP}}
+\DeclareMathOperator{\RP}{\mathbf{RP}}
+\DeclareMathOperator{\coRP}{\mathbf{coRP}}
+\DeclareMathOperator{\BPL}{\mathbf{BPL}}
+\DeclareMathOperator{\IP}{\mathbf{IP}}
+\DeclareMathOperator{\PSPACE}{\mathbf{PSPACE}}
+\DeclareMathOperator{\NPSPACE}{\mathbf{NPSPACE}}
+\DeclareMathOperator{\SAT}{\mathsf{SAT}}
+\DeclareMathOperator{\NL}{\mathbf{NL}}
+\DeclareMathOperator{\PCP}{\mathbf{PCP}}
+\DeclareMathOperator{\PP}{\mathbf{PP}}
+\DeclareMathOperator{\cost}{cost}
+\let\Pr\relax
+\DeclareMathOperator*{\Pr}{\mathbf{Pr}}
+
+\definecolor{shadecolor}{gray}{0.95}
+
+\theoremstyle{plain}
+\newtheorem*{lem}{Lemma}
+
+\theoremstyle{plain}
+\newtheorem*{claim}{Claim}
+
+\theoremstyle{definition}
+\newtheorem*{answer}{Answer}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{thm}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\setlength{\parindent}{0pt}
+\setcounter{secnumdepth}{0}
+
+\pagestyle{fancy}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\title{Linear Algebra and Learning from Data Problem Sets}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Set I.3}
+\begin{enumerate}[label*=\arabic*.,ref=\arabic*]
+\item Problem 5: Find four matrices $A_1$ to $A_4$.
+\begin{shaded}
+\begin{align*}
+A_2 = \begin{bmatrix} 1 & 3 & 1 \\ 0 & 1 & 0 \end{bmatrix} \\
+r = m < n, m = 2, n = 6, r = 2 \\
+A_3 = \begin{bmatrix} 1 & 3 \\ 2 & 1 \\ 3 & 2 \end{bmatrix} \\
+r = n < m, m = 3, n = 2, r = 2 \\
+A_4 = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} \\
+r < m, r < n, m = 2, n = 2, r = 1
+\end{align*}
+\end{shaded}
+\end{enumerate}
+
+\section{Problem Set I.4}
+\begin{enumerate}[label*=\arabic*.,ref=\arabic*]
+\item Problem 3: What lower triangular matrix E puts A into upper triangular form $\textit{EA = U}$? Multiply by $E^{-1} = L$ to factor $A$ into $LU$: $A = \begin{bmatrix} 2 & 1 & 0 \\ 0 & 4 & 2 \\ 6 & 3 & 5 \end{bmatrix}$
+\begin{shaded}
+$\begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix} \begin{bmatrix} 2 & 1 & 0 \\ 0 & 4 & 2 \\ 6 & 3 & 5 \end{bmatrix} = \begin{bmatrix} 2 & 1 & 0 \\ 6 & 3 & 5 \\ 0 & 4 & 2 \end{bmatrix}$ \\
+
+$\begin{bmatrix} 1 & 0 & 0 \\ -3 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} 2 & 1 & 0 \\ 6 & 3 & 5 \\ 0 & 4 & 2 \end{bmatrix} = \begin{bmatrix} 2 & 1 & 0 \\ 0 & 0 & 5 \\ 0 & 4 & 2 \end{bmatrix}$ \\
+
+$\begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix} \begin{bmatrix} 2 & 1 & 0 \\ 0 & 0 & 5 \\ 0 & 4 & 2 \end{bmatrix} = \begin{bmatrix} 2 & 1 & 0 \\ 0 & 4 & 2 \\ 0 & 0 & 5 \end{bmatrix}$ \\
+
+$P_2E_1P_1A$ \\
+
+$\begin{bmatrix} 1 & 0 & 0 \\ -3 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \\ -3 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix}$ \\
+
+$E_1P_1$ \\
+
+$\begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 & 0 \\ -3 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ -3 & 0 & 1 \end{bmatrix}$ \\
+
+$P_2E_1P_1 = E$ \\
+
+$\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 3 & 0 & 1 \end{bmatrix} \begin{bmatrix} 2 & 1 & 0 \\ 0 & 4 & 2 \\ 6 & 3 & 5 \end{bmatrix} = \begin{bmatrix} 2 & 1 & 0 \\ 0 & 4 & 2 \\ 0 & 0 & 5 \end{bmatrix}$ \\
+
+$EA = U$ \\
+
+$\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 3 & 0 & 1 \end{bmatrix} \begin{bmatrix} 2 & 1 & 0 \\ 0 & 4 & 2 \\ 0 & 0 & 5 \end{bmatrix} = \begin{bmatrix} 2 & 1 & 0 \\ 0 & 4 & 2 \\ 6 & 3 & 5 \end{bmatrix}$ \\
+
+$E^{-1} = L, LU = A$
+\end{shaded}
+
+\item Problem 4
+\begin{shaded}
+\begin{enumerate}[label=\alph*)]
+\item 
+$A = L, EA = I, E = L^{-1}$ \\
+$L^{-1}L = I$
+\item 
+$E^{-1} = L$ \\
+$E^{-1}EA = E^{-1}I$ \\
+$E^{-1}E = I$ \\
+$IA = E^{-1}I$ \\
+$A = E^{-1} = L$ 
+\end{enumerate}
+\end{shaded}
+
+\item Problem 6
+\begin{shaded}
+c = 2 gives zero in second pivot, c = 1 gives zero in third pivot \\
+
+$\begin{bmatrix} 1 & c & 0 \\ 0 & 4-2c & 1 \\ 0 & 5-3c & 1 \end{bmatrix}$ \\
+
+$5 - 3c = 4 - 2c$ \\
+
+$\begin{bmatrix} 1 & 1 & 0 \\ 2 & 4 & 1 \\ 3 & 5 & 1 \end{bmatrix} \rightarrow \begin{bmatrix} 1 & 1 & 0 \\ 0 & 2 & 1 \\ 0 & 2 & 1 \end{bmatrix}$
+\end{shaded}
+
+\item Problem 8: Triadiagonal matrices have zero entries except on the main diagonal and the two adjacent diagonals. Factors these into $A = LU$. $A = \begin{bmatrix} 1 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & 1 & 2 \end{bmatrix}$ and $A = \begin{bmatrix} a & a & 0 \\ a & a+b & b \\ 0 & b & b+c \end{bmatrix}$
+\begin{shaded}
+
+$L = \begin{bmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 0 & 1 & 1 \end{bmatrix} U = \begin{bmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{bmatrix}$ \\
+
+$L = \begin{bmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 0 & 1 & 1 \end{bmatrix} U = \begin{bmatrix} a & a & 0 \\ 0 & b & b \\ 0 & 0 & c \end{bmatrix}$
+\end{shaded}
+
+\item Problem 9: If $A$ has pivots 5, 9, 3 with no row exchanges, what are the pivots for the upper left 2 by 2 submatrix $A_2$ (without row 3 and column 3)?
+\begin{shaded}
+$A = \begin{bmatrix} 5 & a & b \\ 0 & 9 & c \\ 0 & 0 & 3 \end{bmatrix} A_2 = \begin{bmatrix} 5 & a \\ 0 & 9 \end{bmatrix}$ \\
+
+$A_2$ pivots are 5 and 9
+\end{shaded}
+
+\item Problem 11: Question for $A = \begin{bmatrix} 1 & 3 \\ 2 & 4\end{bmatrix}$: Apply complete pivoting to produce $P_{1}AP_{2} = LU$.
+\begin{shaded}
+$\begin{bmatrix} \frac{3}{4} & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 2 & 4 \\ -\frac{1}{2} & 0 \end{bmatrix} = \begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix}$ \\
+
+$\begin{bmatrix} 1 & 0 \\ \frac{3}{4} & 1 \end{bmatrix} \begin{bmatrix} 4 & 2 \\ 0 & -\frac{1}{2} \end{bmatrix} = \begin{bmatrix} 4 & 2 \\ 3 & 1 \end{bmatrix}$
+\end{shaded}
+
+\item Problem 12: If the short wide matrix $A$ has $m < n$, how does elimination show that there are nonzero solutions to $Ax = 0$?  
+\begin{shaded}
+$A = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 5 & 6 \end{bmatrix}$ \\
+
+$L = \begin{bmatrix} 1 & 0 \\ 2 & 1 \end{bmatrix} U = \begin{bmatrix} 1 & 2 & 3 \\ 0 & 1 & 0 \end{bmatrix}$
+\end{shaded}
+\end{enumerate}
+
+
+\section{Problem Set I.5}
+\section{Problem Set I.6}
+\section{Problem Set I.7}
+\section{Problem Set I.8}
+\section{Problem Set I.9}
+\section{Problem Set I.10}
+\section{Problem Set I.11}
+\section{Problem Set I.12}
+\section{Problem Set II.1}
+\section{Problem Set II.2}
+\section{Problem Set II.3}
+\section{Problem Set II.4}
+
+\end{document}
