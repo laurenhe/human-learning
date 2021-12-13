@@ -229,6 +229,72 @@ $L = \begin{bmatrix} 1 & 0 \\ 2 & 1 \end{bmatrix} U = \begin{bmatrix} 1 & 2 & 3 
 \section{Problem Set I.5}
 \section{Problem Set I.6}
 \section{Problem Set I.7}
+\begin{enumerate}[label*=\arabic*.,ref=\arabic*]
+\item Problem 5: Write $B$ in the form $\lambda_1x_1x_1^T + \lambda_2x_2x_2^T$ of the spectral theorem $Q\Lambda Q^T$.  $B = \begin{bmatrix} 9 & 12 \\ 12 & 16 \end{bmatrix}$
+\begin{shaded}
+Find eigenvalues and eigenvectors. Use elimination and assign value to free variable $y$. Solve for $x$ and $y$. \\
+
+$\begin{bmatrix} 9 - \lambda & 12 \\ 12 & 16 - \lambda \end{bmatrix}$ \\
+
+$\lambda^2 - 25\lambda + 144 - 144 = \lambda^2 - 25\lambda = \lambda(\lambda - 25)$ \\
+$\lambda = 0, 25$ \\
+
+$\lambda = 0$ \\
+
+$\begin{bmatrix} 9 & 12 \\ 12 & 16 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = 0$ \\
+
+$\begin{bmatrix} 9 & 12 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = 0$ \\
+
+$9x + 12(1) = 0$ \\
+
+$x = -\frac{12}{9} = -\frac{4}{3}$ \\
+
+$9(-\frac{12}{9}) + 12(1) = 0$ \\
+
+$x_1 = \begin{bmatrix} -\frac{4}{3} \\ 1 \end{bmatrix}$ \\
+
+$\lVert x_1 \rVert = \sqrt{(-\frac{4}{3} - 0)^2 + (1 - 0)^2} = \sqrt{\frac{25}{9}} = \frac{5}{3}$ \\
+
+$ x_1 = \begin{bmatrix} -\frac{4}{5} \\ \frac{3}{5} \end{bmatrix}$ \\
+
+$\lambda_1x_1x_1^T = 0 \begin{bmatrix} -\frac{4}{5} \\ \frac{3}{5} \end{bmatrix} \begin{bmatrix} -\frac{4}{5} \frac{3}{5} \end{bmatrix} = 0 \begin{bmatrix} \frac{16}{25} & -\frac{12}{25} \\ -\frac{12}{25} & \frac{9}{25} \end{bmatrix} = \mathbf{0}$ \\
+
+$\lambda = 25$ \\
+
+$\begin{bmatrix} -16 & 12 \\ 12 & -9 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = 0$ \\
+
+$\begin{bmatrix} -16 & 12 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = 0$ \\
+
+$-16x + 12(1) = 0$ \\
+
+$x = \frac{12}{16} = \frac{3}{4}$ \\
+
+$-16(\frac{12}{16}) + 12(1) = 0$ \\
+
+$x_2 = \begin{bmatrix} \frac{3}{4} \\ 1 \end{bmatrix}$ \\
+
+$\lVert x_2 \rVert = \sqrt{(\frac{3}{4} - 0)^2 + (1 - 0)^2} = \sqrt{\frac{25}{16}} = \frac{5}{4}$ \\
+
+$x_2 = \begin{bmatrix} \frac{3}{5} \\ \frac{4}{5} \end{bmatrix}$ \\
+
+$\lambda_2x_2x_2^T = 25 \begin{bmatrix} \frac{3}{5} \\ \frac{4}{5} \end{bmatrix} \begin{bmatrix} \frac{3}{5} \frac{4}{5} \end{bmatrix} = 25 \begin{bmatrix} \frac{9}{25} & \frac{12}{25} \\ \frac{12}{25} & \frac{16}{25} \end{bmatrix} = \begin{bmatrix} 9 & 12 \\ 12 & 16 \end{bmatrix}$ \\
+
+$\lambda_1x_1x_1^T + \lambda_2x_2x_2^T = \begin{bmatrix} 9 & 12 \\ 12 & 16 \end{bmatrix}$ 
+\end{shaded}
+
+\item Problem 12: The energy $\mathbf{x^T}S\mathbf{x} = 2x_1x_2$ has a saddle point and not a minimum at (0, 0). What symmetric matrix $S$ produces this energy? What are its eigenvalues? 
+\begin{shaded}
+$\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$ \\
+
+$\lambda^2 - 1 = (\lambda + 1)(\lambda - 1)$ \\
+$\lambda = \pm 1$ \\
+
+$\begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} = \begin{bmatrix} 2 & 0 \\ 0 & -2 \end{bmatrix}$ \\
+
+$\begin{bmatrix} x_1 & x_2 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = x_1x_2 + x_2x_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \begin{bmatrix} 1 & -1 \end{bmatrix} + \begin{bmatrix} 1 \\ -1 \end{bmatrix} \begin{bmatrix} 1 & 1 \end{bmatrix} = \begin{bmatrix} 1 & -1 \\ 1 & -1 \end{bmatrix} + \begin{bmatrix} 1 & 1 \\ -1 & -1 \end{bmatrix} = \begin{bmatrix} 2 & 0 \\ 0 & -2 \end{bmatrix}$ \\
+\end{shaded}
+\end{enumerate}
+
 \section{Problem Set I.8}
 \section{Problem Set I.9}
 \section{Problem Set I.10}
