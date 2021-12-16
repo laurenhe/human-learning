@@ -293,6 +293,18 @@ $\begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \e
 
 $\begin{bmatrix} x_1 & x_2 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = x_1x_2 + x_2x_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix} \begin{bmatrix} 1 & -1 \end{bmatrix} + \begin{bmatrix} 1 \\ -1 \end{bmatrix} \begin{bmatrix} 1 & 1 \end{bmatrix} = \begin{bmatrix} 1 & -1 \\ 1 & -1 \end{bmatrix} + \begin{bmatrix} 1 & 1 \\ -1 & -1 \end{bmatrix} = \begin{bmatrix} 2 & 0 \\ 0 & -2 \end{bmatrix}$ \\
 \end{shaded}
+
+\item Problem 14: Find the 3 by 3 matrix $S$.
+$\begin{bmatrix} x_1 & x_2 & x_3 \end{bmatrix} \begin{bmatrix} S \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 4(x_1 - x_2 + 2x_3)^2$ 
+\begin{shaded}
+Expand $4(x_1 - x_2 + 2x_3)^2$ \\
+
+$4(x_1 - x_2 + 2x_3)^2 = 4(x_1 - x_2 + 2x_3)(x_1 - x_2 + 2x_3) = 4x_1^2 + 4x_2^2 + 16x_3^2 -8x_1x_2 - 16x_2x_3 + 16x_3x_1$ \\
+
+The coefficients of the first three terms go in the diagonal with $x_{1,1} = 4$, $x_{2,2} = 4$, and $x_{3,3} = 16$. The remaining coefficients are divided between the column row pairs. The value of $x_{1,2}$ and $x_{2,1}$ in $S$ is -4. The value of $x_{2,3}$ and $x_{3,2}$ is -8. The value of $x_{1,3}$ and $x_{3,1}$ is 8. \\
+
+$\begin{bmatrix} x_1 & x_2 & x_3 \end{bmatrix} \begin{bmatrix} 4 & -4 & 8 \\ -4 & 4 & -8 \\ 8 & -8 & 16 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} x_1 & x_2 & x_3 \end{bmatrix} \begin{bmatrix} 4x_1 - 4x_2 + 8x_3 \\ -4x_1 + 4x_2 - 8x_3 \\ 8x_1 - 8x_2 + 16x_3 \end{bmatrix} = 4x_1^2 - 4x_2x_1 + 8x_3x_1 - 4x_1x_2 + 4x_2^2 - 8x_3x_2 + 8x_1x_3 - 8x_2x_3 + 16x_3^2 = 4x_1^2 + 4x_2^2 + 16x_3^2 -8x_1x_2 - 16x_2x_3 + 16x_3x_1$ 
+\end{shaded}
 \end{enumerate}
 
 \section{Problem Set I.8}
